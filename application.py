@@ -14,6 +14,7 @@ def result():
    if request.method == 'POST':
       result = request.form
       seo_dict=SEO.get_top_ten(result['Markdown'])
+      print(seo_dict)
       return render_template("result.html",result = seo_dict)
 
 if __name__ == '__main__':
