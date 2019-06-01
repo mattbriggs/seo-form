@@ -1,10 +1,17 @@
-<html>
-   <body>
-      <form action = "http://localhost:5000/result" method = "POST">
-         <p>Markdown</p>
-         <textarea name = "Markdown" rows="4" cols="50">Paste your markdown text here...</textarea>
-         <!-- <p><input type = "text" name = "Markdown"/></p> -->
-         <p><input type="submit" value="Submit"></p>
-      </form>
-   </body>
-</html>
+{% extends "bootstrap/base.html" %}
+{% block title %}On Page Keyword Tool{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <h1>On Page Keyword Tool</h1>
+  <form action = "http://localhost:5000/result" method = "POST">
+   <textarea name = "Markdown" rows="4" cols="50">Paste your markdown text here...</textarea>
+   <!-- <p><input type = "text" name = "Markdown"/></p> -->
+   <p><input type="submit" value="Submit"></p>
+</form>
+{% endblock %}
