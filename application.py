@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from flask_bootstrap import Bootstrap
 import seoonpage as SEO
 
 app = Flask(__name__)
+app.secret_key = 'thisisthekeynoonknows'
 Bootstrap(app)
 
 @app.route('/')
@@ -14,6 +15,7 @@ def result():
    if request.method == 'POST':
       result = request.form
       seo_dict=SEO.get_top_ten(result['Markdown'])
+      session['seo_ranks'] = seo_dict
       return render_template("result.html",result = seo_dict)
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@
   <h1>On Page Keyword Results</h1>
   <table border = 1>
       <tr><th>Rank</th><td>Keyword</td></th>
-     {% for key, value in result.items() %}
+     {% for key, value in session['seo_ranks'].items() %}
         <tr>
            <th> {{ key }} </th>
            <td> {{ value['keyword'] }} </td>
