@@ -9,6 +9,7 @@
 
 {% block content %}
   <h1>On Page Keyword Results</h1>
+  <p>Passed: {{ result }}</p>
   <table border = 1>
       <tr><th>Rank</th><td>Keyword</td></th>
      {% for key, value in result.items() %}

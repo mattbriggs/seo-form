@@ -196,5 +196,16 @@ def result():
       seo_dict=get_top_ten(result['Markdown'])
       return render_template("result.html", result = seo_dict)
 
+@app.route("/test")
+def test():
+   return "<h1>Test</h1>"
+
+@app.route("/lang")
+def lang():
+    body = "This is the world's first body of work and I would ilke you to listen carefully."
+    items = extract_entities(body)
+    return str(items)
+
+
 if __name__ == '__main__':
    app.run(debug = True)
